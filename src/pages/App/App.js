@@ -4,6 +4,8 @@ import { Route, Switch, Redirect, NavLink } from 'react-router-dom';
 import userService from '../../utils/userService';
 import SignupPage from '../SignupPage/SignupPage';
 import LoginPage from '../LoginPage/LoginPage';
+import MarsCard from '../../components/MarsCard/MarsCard';
+import LocalCard from '../../components/LocalCard/LocalCard'
 
 
 
@@ -56,6 +58,8 @@ class App extends Component {
               <LoginPage history={history} handleSignupOrLogin={this.handleSignupOrLogin} />
           } />
           </Switch>
+          <MarsCard />
+          <LocalCard />
         </main>
       </div>
     );
