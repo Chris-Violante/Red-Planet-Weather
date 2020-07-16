@@ -58,8 +58,12 @@ class App extends Component {
               <LoginPage history={history} handleSignupOrLogin={this.handleSignupOrLogin} />
           } />
           </Switch>
-          <MarsCard />
-          <LocalCard />
+          <div className='row'>
+            <LocalCard />
+            <MarsCard />
+          </div>
+          <div>
+          </div>
         </main>
       </div>
     );

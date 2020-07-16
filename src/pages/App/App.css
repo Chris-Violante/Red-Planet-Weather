@@ -1,5 +1,9 @@
 .App {
   text-align: center;
+  display: flex-box;
+  justify-content: center;
+  background-image: url(https://i.imgur.com/Ax0nbot.jpg);
+  background-size: cover;
 }
 
 .App-logo {
@@ -21,7 +25,7 @@
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: crimson;
 }
 
 .App-link {
@@ -39,6 +43,22 @@
 
 div {
   border: 1px solid grey;
-  margin: 5px;
   padding: 5px;
+  align-self: center;
+}
+
+.row {
+  display: flex-box;
+}
+
+
+.card {
+  background-color: transparent;
+  color: white;
+  font-weight: bolder;
+}
+
+nav, nav a {
+  background-color: #282c34;
+  color: crimson;
 }
