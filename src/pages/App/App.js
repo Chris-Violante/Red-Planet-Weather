@@ -6,13 +6,22 @@ import SignupPage from '../SignupPage/SignupPage';
 import LoginPage from '../LoginPage/LoginPage';
 import MarsCard from '../../components/MarsCard/MarsCard';
 import LocalCard from '../../components/LocalCard/LocalCard'
+import { getCurrentLatLng } from '../Services/geolocation'
+import { getCurWeatherByLatLng } from '../Services/weather-api'
 
 
 
 
 class App extends Component {
   state= {
-    user: userService.getUser
+    user: userService.getUser,
+    lat: null,
+    lng: null,
+    temp: null,
+    wind: null,
+    dscrp: null,
+    icon: '',
+    insight: {}
   }
 
   handleLogout = () => {
@@ -23,6 +32,18 @@ class App extends Component {
   handleSignupOrLogin = () => {
     this.setState({
         user: userService.getUser()
+    })
+  }
+
+  async componentDidMount() {
+    const { lat, lng } = await getCurrentLatLng()
+    const weatherData = await getCurWeatherByLatLng(lat, lng)
+    this.setState({lat: lat, 
+      lng: lng, 
+      temp: Math.round(weatherData.main.temp), 
+      icon: weatherData.weather[0].icon,
+      wind: weatherData.wind.speed,
+      dscrp: weatherData.weather[0].description
     })
   }
 
@@ -57,11 +78,19 @@ class App extends Component {
           <Route exact path='/login' render={({ history }) =>
               <LoginPage history={history} handleSignupOrLogin={this.handleSignupOrLogin} />
           } />
+          <Route exact path='/home' render={({ history }) =>
+              <div className='row'>
+              <LocalCard 
+              temp={this.state.temp} 
+              icon={this.state.icon}
+              wind={this.state.wind}
+              dscrp={this.state.dscrp}
+              icon={this.state.icon}
+               />
+              <MarsCard />
+            </div>
+          } />
           </Switch>
-          <div className='row'>
-            <LocalCard />
-            <MarsCard />
-          </div>
           <div>
           </div>
         </main>
