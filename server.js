@@ -10,13 +10,17 @@ require('dotenv').config();
 require('./config/database');
 
 const usersRoutes = require('./routes/users');
+const marsApiRouter = require('./routes/mars-api-routes');
 
 app.use(logger('dev'));
 app.use(express.json());
+
 app.use(favicon(path.join(__dirname, 'build', 'favicon.ico')));
 app.use(express.static(path.join(__dirname, 'build')));
 
-app.use('/api/users', usersRoutes);
+app.use('/api/users', usersRoutes)
+app.use('/api/mars', marsApiRouter)
+
 app.use(require('./config/auth'))
 
 

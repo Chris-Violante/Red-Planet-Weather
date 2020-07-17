@@ -8,6 +8,8 @@ import MarsCard from '../../components/MarsCard/MarsCard';
 import LocalCard from '../../components/LocalCard/LocalCard'
 import { getCurrentLatLng } from '../Services/geolocation'
 import { getCurWeatherByLatLng } from '../Services/weather-api'
+import { getAll } from '../Services/mars-api';
+
 
 
 
@@ -38,7 +40,10 @@ class App extends Component {
   async componentDidMount() {
     const { lat, lng } = await getCurrentLatLng()
     const weatherData = await getCurWeatherByLatLng(lat, lng)
-    this.setState({lat: lat, 
+    const marsData = await getAll()
+    console.log(marsData)
+    this.setState({
+      lat: lat, 
       lng: lng, 
       temp: Math.round(weatherData.main.temp), 
       icon: weatherData.weather[0].icon,
