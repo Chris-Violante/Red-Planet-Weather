@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import { Route, Switch, Redirect, NavLink } from 'react-router-dom';
+import { Route, Switch, NavLink } from 'react-router-dom';
 import userService from '../../utils/userService';
 import SignupPage from '../SignupPage/SignupPage';
 import LoginPage from '../LoginPage/LoginPage';
@@ -90,7 +90,6 @@ class App extends Component {
               icon={this.state.icon}
               wind={this.state.wind}
               dscrp={this.state.dscrp}
-              icon={this.state.icon}
                />
               <MarsCard />
             </div>
