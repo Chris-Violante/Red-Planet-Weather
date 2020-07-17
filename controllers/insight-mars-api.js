@@ -12,7 +12,9 @@ module.exports = {
 
 
 function getMarsData(req, res) {
-    fetch(baseUrl).then(res => res.json()).then(data => res.send({ data }))
+    fetch(baseUrl)
+    .then(res => res.json())
+    .then(data => res.send({ data }))
     }
 
 
