@@ -13,7 +13,8 @@ class MarsCard extends Component {
                 <div className="card">
                     <span className="card-title">Sol {key}</span>
                       <ul>
-                        <li>Temp {this.props.marsData[key].AT.av}&deg;F</li>
+                        <li>Temp: {this.props.marsData[key].AT.av}&deg;F</li>
+                        <li>Wind Speed: {Math.round((this.props.marsData[key].HWS.av)*2.237)}MPH</li>
                       </ul>
                   </div>
                   </div>
@@ -26,7 +27,8 @@ class MarsCard extends Component {
                   <h5 className="season">Currently {this.props.marsData[key].Season} on Mars</h5>
                   <span className="card-title"> Sol {key}</span>
                     <ul>
-                      <li>Temp {this.props.marsData[key].AT.av}&deg;F</li> 
+                      <li>Temp {this.props.marsData[key].AT.av}&deg;F</li>
+                      <li>Wind Speed: {Math.round((this.props.marsData[key].HWS.av)*2.237)}MPH</li> 
                     </ul>
                   </div>
                   </div>
