@@ -10,7 +10,7 @@ class HomePage extends Component {
                     <div className='card'>
                         <h4 className='card-title'>WELCOME TO RED PLANET WEATHER</h4><br />
                         <h5>A PLACE WHERE YOU CAN COMPARE YOUR WEATHER TO THE WEATHER ON MARS!</h5>
-                        <Link to='/home'>Click Here to See the Weather</Link>
+                        <Link to='/home'>Click Here to See the Weather on Mars</Link>
                     </div>
                 </div>
             </>
