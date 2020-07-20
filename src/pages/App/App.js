@@ -9,6 +9,7 @@ import LocalCard from '../../components/LocalCard/LocalCard'
 import { getCurrentLatLng } from '../Services/geolocation'
 import { getCurWeatherByLatLng } from '../Services/weather-api'
 import { getAll } from '../Services/mars-api';
+import HomePage from '../HomePage/HomePage'
 
 
 
@@ -95,6 +96,9 @@ class App extends Component {
               marsData={this.state.marsData}
                />
             </div>
+          } />
+          <Route exact path='/' render={({ history }) => 
+          <HomePage />
           } />
           </Switch>
           <div>
