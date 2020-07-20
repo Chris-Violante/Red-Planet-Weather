@@ -3,6 +3,7 @@
   display: flex-box;
   justify-content: center;
   background-image: url(https://i.imgur.com/Ax0nbot.jpg);
+  background-position: center;
   background-size: cover;
 }
 
@@ -18,14 +19,14 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: transparent;
   min-height: 10vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: crimson;
+  color: white;
 }
 
 .App-link {
@@ -42,7 +43,6 @@
 }
 
 div {
-  border: 1px solid grey;
   padding: 5px;
   align-self: center;
 }
@@ -59,8 +59,8 @@ div {
 }
 
 nav, nav a {
-  background-color: #282c34;
-  color: crimson;
+  background-color: transparent;
+  color: white;
 }
 
 .season {
