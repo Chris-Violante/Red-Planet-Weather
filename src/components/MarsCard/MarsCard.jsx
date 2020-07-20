@@ -3,63 +3,36 @@ import React, { Component } from 'react';
 
 class MarsCard extends Component {
     render () {
+      console.log(this.props, 'props')
       return (
         <>
-              <div className="col s12">
+          {this.props.marsData.sol_keys ? this.props.marsData.sol_keys.reverse().map((key, idx) => {
+            if (idx > 0) {
+            return (
+            <div className="col s4">
                 <div className="card">
-                    <span className="card-title">Mars Card</span>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit dolorem sapiente culpa, praesentium magni, perspiciatis mollitia perferendis, incidunt eius tempore odio! Cumque atque vel repudiandae temporibus enim laudantium nulla facilis.</p>
+                    <span className="card-title">Sol {key}</span>
+                      <ul>
+                        <li>Temp {this.props.marsData[key].AT.av}&deg;F</li>
+                      </ul>
                   </div>
                   </div>
-                
-
-              <div className="col s4">
+            )
+            } else {
+                return (
+                  <div className="col s12">
                 <div className="card">
-                    <span className="card-title">Mars Card</span>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit dolorem sapiente culpa, praesentium magni, perspiciatis mollitia perferendis, incidunt eius tempore odio! Cumque atque vel repudiandae temporibus enim laudantium nulla facilis.</p>
+                  <h4 className="season">Today</h4>
+                  <h5 className="season">Currently {this.props.marsData[key].Season} on Mars</h5>
+                  <span className="card-title"> Sol {key}</span>
+                    <ul>
+                      <li>Temp {this.props.marsData[key].AT.av}&deg;F</li> 
+                    </ul>
                   </div>
                   </div>
-                
-
-              <div className="col s4">
-                <div className="card">
-                    <span className="card-title">Mars Card</span>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit dolorem sapiente culpa, praesentium magni, perspiciatis mollitia perferendis, incidunt eius tempore odio! Cumque atque vel repudiandae temporibus enim laudantium nulla facilis.</p>
-                  </div>
-                  </div>
-                
-
-              <div className="col s4">
-                <div className="card">
-                    <span className="card-title">Mars Card</span>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit dolorem sapiente culpa, praesentium magni, perspiciatis mollitia perferendis, incidunt eius tempore odio! Cumque atque vel repudiandae temporibus enim laudantium nulla facilis.</p>
-                  </div>
-                  </div>
-                
-
-              <div className="col s4">
-                <div className="card">
-                    <span className="card-title">Mars Card</span>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit dolorem sapiente culpa, praesentium magni, perspiciatis mollitia perferendis, incidunt eius tempore odio! Cumque atque vel repudiandae temporibus enim laudantium nulla facilis.</p>
-                  </div>
-                  </div>
-                
-
-              <div className="col s4">
-                <div className="card">
-                    <span className="card-title">Mars Card</span>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit dolorem sapiente culpa, praesentium magni, perspiciatis mollitia perferendis, incidunt eius tempore odio! Cumque atque vel repudiandae temporibus enim laudantium nulla facilis.</p>
-                  </div>
-                  </div>
-                
-
-              <div className="col s4">
-                <div className="card">
-                    <span className="card-title">Mars Card</span>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit dolorem sapiente culpa, praesentium magni, perspiciatis mollitia perferendis, incidunt eius tempore odio! Cumque atque vel repudiandae temporibus enim laudantium nulla facilis.</p>
-                  </div>
-                  </div>
-                
+            )
+            }
+        }) : null}                
         </>
       );
     }

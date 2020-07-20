@@ -62,3 +62,7 @@ nav, nav a {
   background-color: #282c34;
   color: crimson;
 }
+
+.season {
+  text-transform: capitalize;
+}
