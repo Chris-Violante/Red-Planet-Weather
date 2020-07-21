@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import { Route, Switch, NavLink } from 'react-router-dom';
+import { Route, Switch, NavLink, Redirect } from 'react-router-dom';
 import userService from '../../utils/userService';
 import SignupPage from '../SignupPage/SignupPage';
 import LoginPage from '../LoginPage/LoginPage';
@@ -84,6 +84,7 @@ class App extends Component {
               <LoginPage history={history} handleSignupOrLogin={this.handleSignupOrLogin} />
           } />
           <Route exact path='/home' render={({ history }) =>
+          userService.getUser() ? 
               <div className='row'>
               <LocalCard 
               temp={this.state.temp} 
@@ -95,6 +96,8 @@ class App extends Component {
               marsData={this.state.marsData}
                />
             </div>
+               :
+               <Redirect to='/login' />
           } />
           <Route exact path='/' render={({ history }) => 
           <HomePage />
