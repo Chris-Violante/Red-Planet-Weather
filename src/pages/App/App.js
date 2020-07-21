@@ -55,7 +55,7 @@ class App extends Component {
 
   render () {
     return (
-      <div className="App">
+      <div className="App Container">
         <header className="App-header">
           <nav>
               {userService.getUser() ?
