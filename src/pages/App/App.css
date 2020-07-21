@@ -83,3 +83,11 @@ a {
     height: 100%;
   }
 }
+
+.LoginPage {
+  height: 100vh;
+}
+
+.signup-page {
+  height: 100vh;
+}

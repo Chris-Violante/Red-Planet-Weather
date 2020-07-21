@@ -36,7 +36,7 @@ class SignupForm extends Component {
 
   render() {
     return (
-      <div>
+      <div className='signup-page'>
         <header className="header-footer">Sign Up</header>
         <form className="form-horizontal" onSubmit={this.handleSubmit} >
           <div className="form-group">
@@ -61,7 +61,7 @@ class SignupForm extends Component {
           </div>
           <div className="form-group">
             <div className="col-sm-12">
-              <input type="zipCode" className="form-control" placeholder="Zip Code" value={this.state.zipCode} name="zipCode" onChange={this.handleChange} />
+              <input type="text" className="form-control" placeholder="Zip Code" value={this.state.zipCode} name="zipCode" onChange={this.handleChange} />
             </div>
           </div>
           <div className="form-group">
