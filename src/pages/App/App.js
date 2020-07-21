@@ -57,7 +57,6 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          RED PLANET WEATHER
           <nav>
               {userService.getUser() ?
                   <>

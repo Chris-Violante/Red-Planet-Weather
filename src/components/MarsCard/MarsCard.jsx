@@ -22,7 +22,7 @@ class MarsCard extends Component {
                 return (
                   <div className="col s12">
                   <div className="card">
-                  <h4 className="season">Today</h4>
+                  <h4 className="season">Today:</h4>
                   <h5 className="season">Currently {this.props.marsData[key].Season} on Mars</h5>
                   <span className="card-title"> Sol {key}</span>
                     <ul>

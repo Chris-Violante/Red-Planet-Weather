@@ -2,9 +2,12 @@
   text-align: center;
   display: flex-box;
   justify-content: center;
-  background-image: url(https://i.imgur.com/Ax0nbot.jpg);
+  background-image: url(https://mars.nasa.gov/insight-raw-images/surface/sol/0581/idc/D000M0581_648122343EDR_F0000_0677M_.JPG);
   background-position: center;
   background-size: cover;
+  font-family: 'MuseoModerno', serif;
+  color: white;
+  height: 100vh;
 }
 
 .App-logo {
@@ -30,7 +33,7 @@
 }
 
 .App-link {
-  color: #61dafb;
+  color: white;
 }
 
 @keyframes App-logo-spin {
@@ -45,6 +48,7 @@
 div {
   padding: 5px;
   align-self: center;
+  color: maroon;
 }
 
 .row {
@@ -65,4 +69,8 @@ nav, nav a {
 
 .season {
   text-transform: capitalize;
+}
+
+a {
+  color: white;
 }
