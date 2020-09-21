@@ -11,6 +11,7 @@ Red Planet Weather is a React application that uses your computers location to s
 
 ## Technologies Used
 
+- JWT authentication
 - React.js
 - Mongoose
 - MongoDB
